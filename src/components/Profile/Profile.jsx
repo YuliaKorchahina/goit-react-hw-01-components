@@ -1,22 +1,36 @@
-//import {Component} from 'react'
-//import User from '../../src/user.json';
-
-
-
-export const Profile = ({ user }) => {
+export const Profile = ({items}) => {
+  console.log(items);
+  const {username, tag, location, avatar} = items
+  const {stats: {views: quantity, followers: follower, likes: like}}=items;
   return (
-    <div className="">
-      {/* {User.map(
-        (username, tag, location, avatar, stats, followers, views, likes) => (
-          <Profile
-            username={username}
-            tag={tag}
-            location={location}
-            avatar={avatar}
-            stats={stats}
+    <ul>
+      <div className="profile">
+        <div className="description">
+          <img
+            src={avatar}
+            alt="User avatar"
+            className="avatar"
           />
-        )
-      )} */}
-    </div>
+          <p className="name">{username}</p>
+          <p className="tag">@{tag}</p>
+          <p className="location">{location}</p>
+        </div>
+      
+        <ul className="stats">
+          <li>
+            <span className="label">Followers</span>
+            <span className="quantity"> {follower}</span>
+          </li>
+          <li>
+            <span className="label">Views</span>
+            <span className="quantity"> {quantity}</span>
+          </li>
+          <li>
+            <span className="label">Likes</span>
+            <span className="quantity"> {like}</span>
+          </li>
+        </ul>
+      </div>
+    </ul>
   );
 };
