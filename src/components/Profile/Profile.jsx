@@ -1,15 +1,17 @@
+
+import style from './profile.module.css'
+
 export const Profile = ({items}) => {
-  console.log(items);
-  const {username, tag, location, avatar} = items
-  const {stats: {views: quantity, followers: follower, likes: like}}=items;
+   const {username, tag, location, avatar} = items
+  const {stats: {views: view, followers: follower, likes: like}}=items;
   return (
-    <ul>
-      <div className="profile">
+    <ul className={style.list}>
+      <div className={style.profile}>
         <div className="description">
-          <img
+          <img width={120}
             src={avatar}
             alt="User avatar"
-            className="avatar"
+            className={style.avatar}
           />
           <p className="name">{username}</p>
           <p className="tag">@{tag}</p>
@@ -23,7 +25,7 @@ export const Profile = ({items}) => {
           </li>
           <li>
             <span className="label">Views</span>
-            <span className="quantity"> {quantity}</span>
+            <span className="quantity"> {view}</span>
           </li>
           <li>
             <span className="label">Likes</span>
