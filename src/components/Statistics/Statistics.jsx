@@ -1,17 +1,11 @@
-export const Statistics = ({ stats, title }) => {
-    return(
-  <section className="statistics">
-    {title && <h2 className="title">Upload stats</h2>}
+import { StatisticItemList } from './StatisticItemList';
+import style from './statistics.module.css';
 
-    <ul className="stat-list">
-      {stats.map(({ id, percentage, label }) => {
-        return (
-          <li className="item" key={id}>
-            <span className="label"> {label}</span>
-            <span className="percentage"> {percentage}%</span>
-          </li>
-        );
-      })}
-    </ul>
-  </section>)
+export const Statistics = ({ stats, title }) => {
+  return (
+    <section className="statistics">
+      {title && <h2 className={style.title}>Upload stats</h2>}
+      <StatisticItemList data={stats} />
+    </section>
+  );
 };

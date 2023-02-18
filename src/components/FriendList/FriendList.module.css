@@ -1,0 +1,34 @@
+a {
+    text-decoration: none;
+  }
+  
+li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+/* .friendList{
+    display: flex;
+    flex-direction: column;
+} */
+
+.item{
+    border: 1px solid black;
+}
+.status{
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: blueviolet;
+    
+}
+.ofline{
+  composes:status;
+  background-color: tomato;
+}
+
+.online{
+  composes:status;
+  background-color: green;
+}

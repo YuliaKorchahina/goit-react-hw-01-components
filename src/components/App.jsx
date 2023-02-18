@@ -1,17 +1,21 @@
 import { Profile } from './Profile/Profile';
 import user from './Profile/user.json';
 import { Statistics } from './Statistics/Statistics';
-// import { Section } from './Statistics/Statistics';
 import data from './Statistics/data.json';
+import { FriendList } from './FriendList/FriendList';
+import friends from './FriendList/friends.json';
+import {TransactionHistory} from './Bank/Bank'
+import transactions from './Bank/transactions.json' 
+import { GlobalStyle } from './GlobalStyle';
 
 export const App = () => {
   return (
     <div>
+      <GlobalStyle />
       <Profile items={user} />
-      <>
-        <Statistics title="Uploadstats" stats={data} />
-        {/* <Statistics stats={data} /> */}
-      </>
+      <Statistics title="Uploadstats" stats={data} />
+      <FriendList friends={friends} />;
+      <TransactionHistory items={transactions} />;
     </div>
   );
 };
