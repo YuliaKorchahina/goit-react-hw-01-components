@@ -4,18 +4,19 @@ import { Statistics } from './Statistics/Statistics';
 import data from './Statistics/data.json';
 import { FriendList } from './FriendList/FriendList';
 import friends from './FriendList/friends.json';
-import {TransactionHistory} from './Bank/Bank'
-import transactions from './Bank/transactions.json' 
+import { TransactionHistory } from './Bank/Bank';
+import transactions from './Bank/transactions.json';
 import { GlobalStyle } from './GlobalStyle';
+import { Container } from './Layout.styled';
 
 export const App = () => {
   return (
-    <div>
+    <Container>
       <GlobalStyle />
       <Profile items={user} />
       <Statistics title="Uploadstats" stats={data} />
-      <FriendList friends={friends} />;
-      <TransactionHistory items={transactions} />;
-    </div>
+      <FriendList friends={friends} />
+      <TransactionHistory transactions={transactions} />
+    </Container>
   );
 };

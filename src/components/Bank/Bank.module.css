@@ -1,0 +1,29 @@
+table {
+    width: 500px;
+    border: 1px solid #04AA6D;
+    border-radius: 5px;
+    background-color: rgb(234, 232, 240);
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+td {
+    width: 150px;
+
+}
+
+th {
+    background-color: #04AA6D;
+    color: white;
+}
+
+tbody:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: rgb(91, 150, 125);
+}

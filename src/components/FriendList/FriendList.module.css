@@ -1,34 +1,49 @@
 a {
-    text-decoration: none;
-  }
-  
+  text-decoration: none;
+}
+
 li {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 /* .friendList{
     display: flex;
     flex-direction: column;
 } */
 
-.item{
-    border: 1px solid black;
+.item {
+  display: flex;
+  align-items: center;
+  width: 300px;
+  padding: 10px;
+  margin: 10px;
+  background-color: white;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+  border-radius: 5px;
 }
-.status{
-    display: block;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: blueviolet;
-    
+
+.status {
+  display: block;
+  width: 10px;
+  height: 10px;
+  padding-left: 10px;
+  border-radius: 50%;
+  background-color: blueviolet;
+
 }
-.ofline{
-  composes:status;
+
+.name {
+  padding-left: 10px;
+}
+
+.ofline {
+  composes: status;
   background-color: tomato;
 }
 
-.online{
-  composes:status;
+.online {
+  composes: status;
   background-color: green;
 }
