@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
 import style from './profile.module.css';
+import { ProfileList } from './ProfileList';
 
 export const Profile = ({ items }) => {
   const {
     username = '',
     tag,
     location,
-    avatar,
-    stats: { views, followers, likes },
+    avatar
   } = items;
   return (
     <div className={style.profile}>
@@ -22,21 +22,7 @@ export const Profile = ({ items }) => {
         <p className={style.tag}>@{tag}</p>
         <p className={style.location}>{location}</p>
       </div>
-
-      <ul className={style.stats}>
-        <li className={style.item}>
-          <span className={style.label}>Followers</span>
-          <span className={style.quantity}> {followers}</span>
-        </li>
-        <li className={style.item}>
-          <span className={style.label}>Views</span>
-          <span className={style.quantity}> {views}</span>
-        </li>
-        <li className={style.item}>
-          <span className={style.label}>Likes</span>
-          <span className={style.quantity}> {likes}</span>
-        </li>
-      </ul>
+      <ProfileList  items={items}/>     
     </div>
   );
 };
@@ -46,7 +32,6 @@ Profile.defaultProps = {
   tag: '',
   location: '',
   avatar: '',
-  stats: {},
 };
 
 Profile.propTypes = {
@@ -54,5 +39,4 @@ Profile.propTypes = {
   tag: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
   avatar: PropTypes.string.isRequired,
-  stats: PropTypes.objectOf(PropTypes.number.isRequired),
 };
